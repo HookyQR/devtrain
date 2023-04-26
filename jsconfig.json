@@ -1,0 +1,9 @@
+{
+  "typeAcquisition": {
+    "include": ["jest", "jest-enzyme"]
+  },
+  "compilerOptions": {
+    "target": "es2020",
+    "baseUrl": "./src"
+  }
+}
