@@ -14,6 +14,37 @@ body {
   margin: 0;
 }
 
+.game__wrapper {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+}
+
+.illustration__wrapper {
+  display: flex;
+  width: 30%;
+  height: 100%;
+  position: relative;
+}
+
+.rules__wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 10px;
+  width: 70%;
+  padding-bottom: 100px;
+}
+
+.word__wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 60px;
+  gap: 4px;
+}
+
 .highlight {
   color: #fff;
   display: inline-block;
@@ -31,4 +62,16 @@ body {
   padding: 1em;
   background: rgb(255, 255, 255);
   border: solid 5px rgb(0, 0, 0);
+}
+
+.rules {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-left: 16px;
+  color: rgb(135 135 135);
+}
+
+.rules li {
+  padding-left: 10px;
 }

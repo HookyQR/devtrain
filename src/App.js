@@ -1,15 +1,12 @@
+import { Game } from "./components/Game";
+import { IllustrationWrapper } from "./components/Illustration";
 import { Layout } from "./components/Layout";
-import { Letter } from "./components/Letter";
 import "./styles/index.css";
 
 const App = () => (
   <Layout>
-    <Letter />
-    <Letter />
-    <Letter />
-    <Letter />
-    <Letter />
-    <Letter />
+    <IllustrationWrapper />
+    <Game />
   </Layout>
 );
 
