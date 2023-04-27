@@ -3,9 +3,9 @@ import Hangman from "./HangmanGame";
 
 function Intro() {
   return (
-    <p className="highlight">
-      The aim of the game is simple! Guess the letters and find the missing word
-      or words
+    <p style={{ fontWeight: 600 }}>
+      The aim of the game is simple! Figure out the mystery word and save Po! or
+      words
     </p>
   );
 }
@@ -13,21 +13,18 @@ function Intro() {
 function Rules() {
   return (
     <ol className="rules">
-      <li>
-        Use the keyboard below (or your own) to guess a letter one at a time,
-        hit <strong className="highlight">Enter ⮐</strong> to lock in your
-        answer
-      </li>
+      <li>Using your keyboard guess a letter one at a time</li>
       <li>
         If your carefully selected letter exists in the answer, then all places
         in the answer where that letter appear will be revealed
       </li>
       <li>
-        Every time you guess a letter wrong Po falls closer and closer to doom.
+        Every time you guess a letter wrong Po falls closer and closer to his
+        doom
       </li>
       <li>
-        <strong style={{ color: "#000" }}>Careful...</strong> You only get 8
-        failed attempts to solve the puzzle... or Po falls to the void
+        <strong style={{ color: "#000" }}>Careful...</strong> You only get 6
+        failed attempts to solve the puzzle... or Po falls in to the void
       </li>
     </ol>
   );

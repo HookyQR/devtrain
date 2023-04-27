@@ -5,7 +5,7 @@ import "./styles/index.css";
 
 const App = () => (
   <Layout>
-    <IllustrationWrapper />
+    <IllustrationWrapper lives={2} />
     <GameDetails />
   </Layout>
 );

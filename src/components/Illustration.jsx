@@ -1,10 +1,23 @@
-import poTheCat from "../assets/po_holding.svg";
+import React from "react";
+import one from "../assets/po_holding.svg";
+import two from "../assets/po_holding.svg";
+import three from "../assets/po_holding.svg";
+import four from "../assets/po_holding.svg";
+import five from "../assets/po_holding.svg";
+import six from "../assets/po_holding.svg";
 
-export function IllustrationWrapper() {
+const imgs = [one, two, three, four, five, six].reverse();
+
+export function IllustrationWrapper({ lives }) {
+  const [hangmanImage, setHangmanImage] = React.useState(null);
+  React.useEffect(() => {
+    lives && setHangmanImage(imgs[lives]);
+  }, [lives]);
+
   return (
     <div className="illustration__wrapper ">
       <img
-        src={poTheCat}
+        src={hangmanImage}
         alt=""
         style={{
           position: "absolute",

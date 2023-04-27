@@ -22,8 +22,9 @@ body {
 
 .illustration__wrapper {
   display: flex;
-  width: 30%;
+  flex-grow: 1;
   height: 100%;
+  max-width: 600px;
   position: relative;
 }
 
@@ -31,10 +32,12 @@ body {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  justify-content: center;
+
+  height: 100%;
   gap: 10px;
-  width: 70%;
-  padding-bottom: 100px;
+  flex-grow: 2;
+  max-width: 800px;
+  padding: 100px 0;
 }
 
 .word__wrapper {
@@ -55,19 +58,86 @@ body {
 }
 
 .word {
+  display: flex;
+  padding: 20px;
+  justify-content: center;
+  align-items: center;
   font-size: 64px;
   font-family: monospace;
   letter-spacing: -15px;
+  border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+  border: solid 2px;
+  border-color: #e0e0e0;
+  margin: 20px 0;
+  width: auto;
 }
 
 .rules {
   display: flex;
   flex-direction: column;
+  font-size: 13px;
   gap: 10px;
   padding-left: 16px;
+  margin-bottom: 60px;
   color: rgb(135 135 135);
 }
 
 .rules li {
   padding-left: 10px;
+}
+
+.letter__input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 60px;
+  height: 60px;
+  color: #000;
+  font-size: 62px;
+  margin-right: 1rem;
+  font-family: monospace;
+  outline: none;
+  border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+  background: rgb(255, 255, 255);
+  border: solid 5px rgb(0, 0, 0);
+  caret-color: transparent;
+}
+
+.letter__input::placeholder {
+  color: rgb(193, 193, 193);
+}
+
+.button__input {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+  appearance: none;
+  font-family: monospace;
+  font-weight: 600;
+  font-size: 14px;
+  background-color: #000;
+  border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+  border: solid 5px;
+  border-color: #000;
+  color: #fff;
+  padding: 6px 10px;
+  transition: all 0.3s ease;
+}
+
+.button__input:hover {
+  border-color: #282828;
+  background-color: #282828;
+  transition: all 0.3s ease;
+}
+.button__input:disabled {
+  color: #000;
+  cursor: not-allowed;
+  border-color: #f0f0f0;
+  background-color: #f0f0f0;
+  transition: all 0.3s ease;
 }
