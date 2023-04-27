@@ -1,4 +1,4 @@
-import { Game } from "./components/Game";
+import { GameDetails } from "./components/GameDetails";
 import { IllustrationWrapper } from "./components/Illustration";
 import { Layout } from "./components/Layout";
 import "./styles/index.css";
@@ -6,7 +6,7 @@ import "./styles/index.css";
 const App = () => (
   <Layout>
     <IllustrationWrapper />
-    <Game />
+    <GameDetails />
   </Layout>
 );
 
