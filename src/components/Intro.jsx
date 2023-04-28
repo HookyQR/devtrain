@@ -6,7 +6,6 @@ export function Intro() {
       <img src={logo} alt="Save Po the Cat" width={500} />
       <p style={{ fontWeight: 600 }}>
         The aim of the game is simple! Figure out the mystery word and save Po!
-        or words
       </p>
       <Rules />
     </>
