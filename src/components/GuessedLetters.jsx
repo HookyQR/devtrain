@@ -1,14 +1,4 @@
 export function GuessedLetters({ fails, guessAttempts, maskedWord, guesses }) {
-  const displayGuessedLetters = guesses.map((guessedLetter) => (
-    <span
-      key={guessedLetter}
-      style={{
-        color: maskedWord.includes(guessedLetter) ? "green" : "red",
-      }}
-    >
-      {guessedLetter}
-    </span>
-  ));
   return (
     <>
       <p style={{ margin: "20px 0 0 0" }}>
@@ -28,7 +18,17 @@ export function GuessedLetters({ fails, guessAttempts, maskedWord, guesses }) {
           fontFamily: "monospace",
         }}
       >
-        {displayGuessedLetters}
+        {Array.isArray(guesses) &&
+          guesses.map((guessedLetter) => (
+            <span
+              key={guessedLetter}
+              style={{
+                color: maskedWord.includes(guessedLetter) ? "green" : "red",
+              }}
+            >
+              {guessedLetter}
+            </span>
+          ))}
       </p>
     </>
   );

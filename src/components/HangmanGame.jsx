@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo } from "react";
+import { useEffect, useState } from "react";
 import { GuessedLetters } from "./GuessedLetters";
 import { GuessInput } from "./GuessInput";
 
@@ -20,14 +20,15 @@ function GameOverScreen({ gameIsLost }) {
   );
 }
 
-export default function Hangman() {
-  const words = useMemo(() => ["luna", "hooky", "react", "doggo"], []);
-
-  const guessAttempts = 6;
-
+export default function HangmanGame({
+  words,
+  guesses,
+  guessAttempts,
+  setGuesses,
+  fails,
+  setFails,
+}) {
   const [word, setWord] = useState("");
-  const [guesses, setGuesses] = useState([]);
-  const [fails, setFails] = useState(0);
 
   useEffect(() => {
     const randomIndex = Math.floor(Math.random() * words.length);
@@ -35,9 +36,11 @@ export default function Hangman() {
   }, [words]);
 
   const maskedWord = word
-    .split("")
-    .map((letter) => (guesses.includes(letter) ? letter : "_"))
-    .join(" ");
+    ? word
+        .split("")
+        .map((letter) => (guesses.includes(letter) ? letter : "_"))
+        .join(" ")
+    : "";
 
   const gameIsLost = fails >= guessAttempts;
   const gameIsWon = !maskedWord.includes("_");

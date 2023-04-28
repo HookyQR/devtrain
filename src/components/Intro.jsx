@@ -1,18 +1,18 @@
 import logo from "../assets/logo.svg";
 
-export function Intro() {
+export function Intro({ guessAttempts }) {
   return (
     <>
       <img src={logo} alt="Save Po the Cat" width={500} />
       <p style={{ fontWeight: 600 }}>
         The aim of the game is simple! Figure out the mystery word and save Po!
       </p>
-      <Rules />
+      <Rules guessAttempts={guessAttempts} />
     </>
   );
 }
 
-function Rules() {
+function Rules({ guessAttempts }) {
   return (
     <ol className="rules">
       <li>Using your keyboard guess a letter one at a time</li>
@@ -25,8 +25,9 @@ function Rules() {
         doom
       </li>
       <li>
-        <strong style={{ color: "#000" }}>Careful...</strong> You only get 6
-        failed attempts to solve the puzzle... or Po falls in to the void
+        <strong style={{ color: "#000" }}>Careful...</strong> You only get{" "}
+        {guessAttempts} failed attempts to solve the puzzle... or Po falls in to
+        the void
       </li>
     </ol>
   );

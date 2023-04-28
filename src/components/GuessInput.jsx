@@ -21,7 +21,7 @@ export function GuessInput({ setGuesses, guesses, setFails, fails, word }) {
     setInputLetter("");
   };
 
-  const isDisabled = inputLetter.length > 0 || null;
+  const isDisabled = inputLetter.length > 0;
 
   return (
     <div
