@@ -31,7 +31,6 @@ export function GuessInput({ setGuesses, guesses, setFails, fails, word }) {
         gap: "4px",
       }}
     >
-      <h3 style={{ fontSize: "22px" }}>I'm going to try the letter...</h3>
       <div
         style={{
           display: "flex",

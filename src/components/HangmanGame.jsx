@@ -5,16 +5,16 @@ import { GuessInput } from "./GuessInput";
 function GameOverScreen({ gameIsLost }) {
   return (
     <>
-      <h2>
+      <h1>
         {gameIsLost
           ? "You lose... To the void you go Po!"
           : "You saved Po! Yayyyy"}
-      </h2>
+      </h1>
       <button
         className="button__input"
         onClick={() => window.location.reload()}
       >
-        Try Again
+        {gameIsLost ? "Try Again" : "Play Again"}
       </button>
     </>
   );
@@ -56,7 +56,16 @@ export default function Hangman() {
       ) : (
         <GameOverScreen gameIsLost={gameIsLost} />
       )}
-      <p className="word">{maskedWord}</p>
+      <p
+        className="word"
+        style={{
+          color: gameIsWon ? "white" : "black",
+          backgroundColor: gameIsWon ? "green" : "transparent",
+          borderColor: gameIsWon ? "green" : "#e0e0e0",
+        }}
+      >
+        {maskedWord}
+      </p>
       <GuessedLetters
         guessAttempts={guessAttempts}
         maskedWord={maskedWord}
