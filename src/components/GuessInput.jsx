@@ -70,9 +70,11 @@ export function GuessInput({ setGuesses, guesses, setFails, fails, word }) {
           >
             {isDisabled ? "Lock it in!" : "Type a letter first!"}
           </button>
-          <span style={{ color: "gray", fontSize: "12px" }}>
-            or hit Enter ⮐
-          </span>
+          {isDisabled && (
+            <span style={{ color: "gray", fontSize: "12px" }}>
+              or hit Enter ⮐
+            </span>
+          )}
         </div>
       </div>
     </div>
