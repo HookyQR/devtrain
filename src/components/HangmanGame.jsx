@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { GuessedLetters } from "./GuessedLetters";
 import { GuessInput } from "./GuessInput";
 
@@ -21,11 +21,18 @@ function GameOverScreen({ gameIsLost }) {
 }
 
 export default function Hangman() {
-  const word = "MASHNAY";
+  const words = useMemo(() => ["luna", "hooky", "react", "doggo"], []);
+
   const guessAttempts = 6;
 
+  const [word, setWord] = useState("");
   const [guesses, setGuesses] = useState([]);
   const [fails, setFails] = useState(0);
+
+  useEffect(() => {
+    const randomIndex = Math.floor(Math.random() * words.length);
+    setWord(words[randomIndex].toUpperCase());
+  }, [words]);
 
   const maskedWord = word
     .split("")
