@@ -1,12 +1,15 @@
 import logo from "../assets/logo.svg";
-import Hangman from "./HangmanGame";
 
-function Intro() {
+export function Intro() {
   return (
-    <p style={{ fontWeight: 600 }}>
-      The aim of the game is simple! Figure out the mystery word and save Po! or
-      words
-    </p>
+    <>
+      <img src={logo} alt="Save Po the Cat" width={500} />
+      <p style={{ fontWeight: 600 }}>
+        The aim of the game is simple! Figure out the mystery word and save Po!
+        or words
+      </p>
+      <Rules />
+    </>
   );
 }
 
@@ -27,16 +30,5 @@ function Rules() {
         failed attempts to solve the puzzle... or Po falls in to the void
       </li>
     </ol>
-  );
-}
-
-export function GameDetails() {
-  return (
-    <div className="rules__wrapper">
-      <img src={logo} alt="Save Po the Cat" width={500} />
-      <Intro />
-      <Rules />
-      <Hangman />
-    </div>
   );
 }
