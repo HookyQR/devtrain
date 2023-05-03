@@ -24,58 +24,34 @@ export function GuessInput({ setGuesses, guesses, setFails, fails, word }) {
   const isDisabled = inputLetter.length > 0;
 
   return (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        gap: "4px",
-      }}
-    >
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "row",
-          alignItems: "center",
-          gap: "4px",
+    <div className="guessinput__wrapper">
+      <input
+        className="guessinput__input"
+        type="text"
+        value={inputLetter}
+        onChange={handleInput}
+        autoFocus={true}
+        onBlur={({ target }) => target.focus()}
+        onKeyDown={(event) => {
+          if (event.key === "Enter") {
+            handleGuess();
+          } else if (event.key === "Backspace" || event.key === "Delete") {
+            setInputLetter("");
+          }
         }}
-      >
-        <input
-          type="text"
-          value={inputLetter}
-          onChange={handleInput}
-          autoFocus={true}
-          onBlur={({ target }) => target.focus()}
-          onKeyDown={(event) => {
-            if (event.key === "Enter") {
-              handleGuess();
-            } else if (event.key === "Backspace" || event.key === "Delete") {
-              setInputLetter("");
-            }
-          }}
-          placeholder="?"
-          className="letter__input"
-        />
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            gap: "4px",
-          }}
+        placeholder="?"
+      />
+      <div className="guessinput__submit">
+        <button
+          className="guessinput__submitbutton"
+          onClick={handleGuess}
+          disabled={isDisabled ? false : true}
         >
-          <button
-            onClick={handleGuess}
-            className="button__input"
-            disabled={isDisabled ? false : true}
-          >
-            {isDisabled ? "Lock it in!" : "Type a letter first!"}
-          </button>
-          {isDisabled && (
-            <span style={{ color: "gray", fontSize: "12px" }}>
-              or hit Enter ⮐
-            </span>
-          )}
-        </div>
+          {isDisabled ? "Lock it in!" : "Type a letter first!"}
+        </button>
+        {isDisabled && (
+          <span className="guessinput__submithelper">or hit Enter ⮐</span>
+        )}
       </div>
     </div>
   );

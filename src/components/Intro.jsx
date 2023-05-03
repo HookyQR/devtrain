@@ -4,8 +4,11 @@ export function Intro({ guessAttempts }) {
   return (
     <>
       <img src={logo} alt="Save Po the Cat" width={500} />
-      <p style={{ fontWeight: 600 }}>
-        The aim of the game is simple! Figure out the mystery word and save Po!
+      <p>
+        <strong>
+          The aim of the game is simple! Figure out the mystery word and save
+          Po!
+        </strong>
       </p>
       <Rules guessAttempts={guessAttempts} />
     </>
@@ -25,9 +28,8 @@ function Rules({ guessAttempts }) {
         doom
       </li>
       <li>
-        <strong style={{ color: "#000" }}>Careful...</strong> You only get{" "}
-        {guessAttempts} failed attempts to solve the puzzle... or Po falls in to
-        the void
+        <strong>Careful...</strong> You only get {guessAttempts} failed attempts
+        to solve the puzzle... or Po falls in to the void
       </li>
     </ol>
   );

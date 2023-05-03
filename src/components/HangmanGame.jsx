@@ -47,7 +47,7 @@ export default function HangmanGame({
   const isGameOver = gameIsLost || gameIsWon;
 
   return (
-    <div style={{ display: "flex", flexDirection: "column", width: "100%" }}>
+    <div className="hangman__wrapper">
       {!isGameOver ? (
         <GuessInput {...{ setGuesses, guesses, setFails, fails, word }} />
       ) : (

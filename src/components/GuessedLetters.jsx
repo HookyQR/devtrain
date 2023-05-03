@@ -1,7 +1,7 @@
 export function GuessedLetters({ fails, guessAttempts, maskedWord, guesses }) {
   return (
     <>
-      <p style={{ margin: "20px 0 0 0" }}>
+      <p className="guessedletters__wrapper">
         {fails >= guessAttempts ? (
           "This cat has no more lives..."
         ) : (
@@ -11,24 +11,21 @@ export function GuessedLetters({ fails, guessAttempts, maskedWord, guesses }) {
           </>
         )}
       </p>
-      <p
-        style={{
-          fontSize: "42px",
-          marginTop: 0,
-          fontFamily: "monospace",
-        }}
-      >
+      <p className="guessedletters">
         {Array.isArray(guesses) &&
-          guesses.map((guessedLetter) => (
-            <span
-              key={guessedLetter}
-              style={{
-                color: maskedWord.includes(guessedLetter) ? "green" : "red",
-              }}
-            >
-              {guessedLetter}
-            </span>
-          ))}
+          guesses.map((guessedLetter) => {
+            const correctLetter = maskedWord.includes(guessedLetter);
+            return (
+              <span
+                key={guessedLetter}
+                style={{
+                  color: correctLetter ? "green" : "red",
+                }}
+              >
+                {guessedLetter}
+              </span>
+            );
+          })}
       </p>
     </>
   );

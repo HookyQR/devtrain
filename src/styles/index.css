@@ -19,10 +19,20 @@ p {
   line-height: calc(1ex / 0.32);
 }
 
+strong {
+  color: #000;
+}
+
 .game__wrapper {
   display: flex;
   flex-direction: row;
   height: 100vh;
+}
+
+.hangman__wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
 
 .illustration__wrapper {
@@ -90,7 +100,26 @@ p {
   padding-left: 10px;
 }
 
-.letter__input {
+.guessinput__wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 4px;
+}
+
+.guessinput__submit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.guessinput__submithelper {
+  color: gray;
+  font-size: 12px;
+}
+
+.guessinput__input {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -108,11 +137,11 @@ p {
   caret-color: transparent;
 }
 
-.letter__input::placeholder {
+.guessinput__input::placeholder {
   color: rgb(193, 193, 193);
 }
 
-.button__input {
+.guessinput__submitbutton {
   background: none;
   color: inherit;
   border: none;
@@ -133,17 +162,21 @@ p {
   transition: all 0.3s ease;
 }
 
-.button__input:hover {
+.guessinput__submitbutton:hover {
   border-color: #282828;
   background-color: #282828;
   transition: all 0.3s ease;
 }
-.button__input:disabled {
+.guessinput__submitbutton:disabled {
   color: #000;
   cursor: not-allowed;
   border-color: #f0f0f0;
   background-color: #f0f0f0;
   transition: all 0.3s ease;
+}
+
+.guessedletters__wrapper {
+  margin: 20px 0 0 0;
 }
 
 .guessedletters {
