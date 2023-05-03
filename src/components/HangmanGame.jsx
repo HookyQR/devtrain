@@ -49,13 +49,7 @@ export default function HangmanGame({
   return (
     <div style={{ display: "flex", flexDirection: "column", width: "100%" }}>
       {!isGameOver ? (
-        <GuessInput
-          setGuesses={setGuesses}
-          guesses={guesses}
-          setFails={setFails}
-          fails={fails}
-          word={word}
-        />
+        <GuessInput {...{ setGuesses, guesses, setFails, fails, word }} />
       ) : (
         <GameOverScreen gameIsLost={gameIsLost} />
       )}
@@ -69,12 +63,7 @@ export default function HangmanGame({
       >
         {maskedWord}
       </p>
-      <GuessedLetters
-        guessAttempts={guessAttempts}
-        maskedWord={maskedWord}
-        fails={fails}
-        guesses={guesses}
-      />
+      <GuessedLetters {...{ guessAttempts, maskedWord, fails, guesses }} />
     </div>
   );
 }

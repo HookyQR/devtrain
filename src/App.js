@@ -16,14 +16,9 @@ export default function App() {
     <Layout>
       <IllustrationWrapper livesLeft={guessAttempts - fails} />
       <div className="rules__wrapper">
-        <Intro guessAttempts={guessAttempts} />
+        <Intro {...{ guessAttempts }} />
         <HangmanGame
-          words={words}
-          guesses={guesses}
-          guessAttempts={guessAttempts}
-          setGuesses={setGuesses}
-          fails={fails}
-          setFails={setFails}
+          {...{ words, guesses, guessAttempts, setGuesses, fails, setFails }}
         />
       </div>
     </Layout>
