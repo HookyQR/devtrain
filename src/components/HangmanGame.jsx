@@ -11,7 +11,7 @@ function GameOverScreen({ gameIsLost }) {
           : "You saved Po! Yayyyy"}
       </h1>
       <button
-        className="button__input"
+        className="guessinput__submitbutton"
         onClick={() => window.location.reload()}
       >
         {gameIsLost ? "Try Again" : "Play Again"}
