@@ -1,28 +1,20 @@
 export function BottomRope({ livesLeft }) {
-  const viewBoxMaskHeight = () => {
-    switch (livesLeft) {
-      case 0:
-        return "397";
-      case 1:
-        return "393";
-      case 2:
-        return "393";
-      case 3:
-        return "392";
-      case 4:
-        return "390";
-      case 5:
-        return "389";
-      case 6:
-        return "389";
+  const heights = [
+    { height: "397" },
+    { height: "393" },
+    { height: "393" },
+    { height: "392" },
+    { height: "390" },
+    { height: "389" },
+    { height: "389" },
+  ];
 
-      default:
-        return "389";
-    }
-  };
+  const defaultHeight = 389;
+  const viewBoxMaskHeight = heights[livesLeft]?.height || defaultHeight;
+
   return (
     <svg
-      height={viewBoxMaskHeight()}
+      height={viewBoxMaskHeight}
       viewBox="0 0 75 397"
       width="75"
       xmlns="http://www.w3.org/2000/svg"
