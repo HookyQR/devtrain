@@ -1,13 +1,5 @@
 export function TopRope({ livesLeft }) {
-  const heights = [
-    { height: "224" },
-    { height: "220" },
-    { height: "215" },
-    { height: "205" },
-    { height: "190" },
-    { height: "182" },
-    { height: "175" },
-  ];
+  const heights = [224, 220, 215, 205, 190, 182, 175];
 
   const defaultHeight = 224;
   const viewBoxMaskHeight = heights[livesLeft]?.height || defaultHeight;

@@ -1,13 +1,5 @@
 export function BottomRope({ livesLeft }) {
-  const heights = [
-    { height: "397" },
-    { height: "393" },
-    { height: "393" },
-    { height: "392" },
-    { height: "390" },
-    { height: "389" },
-    { height: "389" },
-  ];
+  const heights = [397, 393, 393, 392, 390, 389, 389];
 
   const defaultHeight = 389;
   const viewBoxMaskHeight = heights[livesLeft]?.height || defaultHeight;
