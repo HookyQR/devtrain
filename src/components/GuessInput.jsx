@@ -8,9 +8,7 @@ export function GuessInput({ setGuesses, guesses, setFails, fails, word }) {
   };
 
   const handleGuess = () => {
-    if (!inputLetter || undefined) {
-      alert("Please enter a letter!");
-    } else if (guesses.includes(inputLetter)) {
+    if (guesses.includes(inputLetter)) {
       alert(`You already guessed "${inputLetter}"!`);
     } else if (!word.includes(inputLetter)) {
       setFails(fails + 1);
@@ -21,7 +19,7 @@ export function GuessInput({ setGuesses, guesses, setFails, fails, word }) {
     setInputLetter("");
   };
 
-  const isDisabled = inputLetter.length > 0;
+  const isDisabled = !inputLetter;
 
   return (
     <div className="guessinput__wrapper">
@@ -45,11 +43,11 @@ export function GuessInput({ setGuesses, guesses, setFails, fails, word }) {
         <button
           className="guessinput__submitbutton"
           onClick={handleGuess}
-          disabled={isDisabled ? false : true}
+          disabled={isDisabled ? true : false}
         >
-          {isDisabled ? "Lock it in!" : "Type a letter first!"}
+          {!isDisabled ? "Lock it in!" : "Type a letter first!"}
         </button>
-        {isDisabled && (
+        {!isDisabled && (
           <span className="guessinput__submithelper">or hit Enter ⮐</span>
         )}
       </div>
