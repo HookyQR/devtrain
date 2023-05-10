@@ -2,7 +2,7 @@ export function TopRope({ livesLeft }) {
   const heights = [224, 220, 215, 205, 190, 182, 175];
 
   const defaultHeight = 224;
-  const viewBoxMaskHeight = heights[livesLeft]?.height || defaultHeight;
+  const viewBoxMaskHeight = heights[livesLeft] || defaultHeight;
 
   return (
     <svg
