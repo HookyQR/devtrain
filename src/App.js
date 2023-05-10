@@ -1,4 +1,26 @@
+import { useState } from "react";
+import { Intro } from "./components/Intro";
+import { IllustrationWrapper } from "./components/Illustration";
+import { Layout } from "./components/Layout";
+import "./styles/index.css";
+import HangmanGame from "./components/HangmanGame";
 
-const App = () => <div>Hi!</div>
+const words = ["luna", "hooky", "react", "doggo"];
+const guessAttempts = 6;
 
-export default App;
+export default function App() {
+  const [guesses, setGuesses] = useState([]);
+  const [fails, setFails] = useState(0);
+
+  return (
+    <Layout>
+      <IllustrationWrapper livesLeft={guessAttempts - fails} />
+      <div className="rules__wrapper">
+        <Intro {...{ guessAttempts }} />
+        <HangmanGame
+          {...{ words, guesses, guessAttempts, setGuesses, fails, setFails }}
+        />
+      </div>
+    </Layout>
+  );
+}
